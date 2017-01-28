@@ -1,0 +1,154 @@
+<html>
+<head>
+<script language="JavaScript" type="text/javascript">
+function nofocus()
+{
+document.convert.InUnit.focus()
+}
+var cmValue = 1
+var mValue = 100
+var kmValue = 100000
+var inValue = 2.54000843476
+var ftValue = 30.4801012183
+var ydValue = 91.440275784
+var miValue = 160934.708789
+function toCM()
+{
+var i = document.convert.unit.selectedIndex
+var thisUnit = document.convert.unit.options[i].value
+if (thisUnit == "CM")
+ {
+document.convert.cm.value = document.convert.InUnit.value
+ }
+else if(thisUnit == "M")
+ {
+document.convert.cm.value = document.convert.InUnit.value * mValue
+ }
+else if(thisUnit == "KM" )
+ {
+document.convert.cm.value = document.convert.InUnit.value * kmValue
+ }
+else if(thisUnit == "IN" )
+ {
+document.convert.cm.value = document.convert.InUnit.value * inValue
+ }
+else if(thisUnit == "FT" )
+ {
+document.convert.cm.value = document.convert.InUnit.value * ftValue
+ }
+else if(thisUnit == "YD" )
+ {
+document.convert.cm.value = document.convert.InUnit.value * ydValue
+ }
+else if(thisUnit == "MI" )
+ {
+document.convert.cm.value = document.convert.InUnit.value * miValue
+ }
+toAll()
+}
+function toAll()
+{
+var m = document.convert.cm.value
+document.convert.m.value = m / mValue
+document.convert.km.value = m / kmValue
+document.convert.inch.value = m / inValue
+document.convert.ft.value = m / ftValue
+document.convert.yd.value = m / ydValue
+document.convert.mi.value = m / miValue
+}
+//-->
+</script>
+<link href="cals.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="body" align="center">
+<div id="Header">
+<div align="center"><h3>Length Converter</h3></div>
+<button><a href="popup.html">&#10506;</a></button>
+<button><a href="weight.html">&rarr;</a>  </button>       
+<button><a href="Converter.html ">&larr;</a></button>
+</div>
+<div id="contant">
+<div align="center"><form name="convert">
+<table border=1>
+<tr><th>Unit</th><th>Number</th></tr>
+<tr>
+ <td>
+<select name="unit">
+<option value="CM">Centimetre
+<option value="M">Metre
+<option value="KM">Kilometre
+<option value="IN">Inch
+<option value="FT">Feet
+<option value="YD">Yard
+<option value="MI">Mile
+</select>
+ </td>
+ <td>
+<input type="text" name="InUnit" size="20" maxlength="20" value="0">
+ </td>
+ </tr>
+ <tr>
+ <td>
+Centimetre:   </td>
+ <td>
+<input type="text" name="cm" size="20" maxlength="20" value="0" onFocus="nofocus()">
+ </td>
+ </tr>
+ <tr>
+ <td>
+Metre:
+</td>
+<td>
+<input type="text" name="m" size="20" maxlength="20" value="0" onFocus="nofocus()">
+</td>
+</tr>
+<tr>
+<td>
+Kilometre:   </td>
+<td>
+<input type="text" name="km" size="20" maxlength="20" value="0" onFocus="nofocus()">
+</td>
+</tr>
+<tr>
+<td>
+Inch:   </td>
+<td>
+<input type="text" name="inch" size="20" maxlength="20" value="0" onFocus="nofocus()">
+</td>
+</tr>
+<tr>
+<td>
+Feet:   </td>
+<td>
+<input type="text" name="ft" size="20" maxlength="20" value="0" onFocus="nofocus()">  </td>
+</tr>
+<tr>
+<td>
+Yard:   </td>
+<td>
+<input type="text" name="yd" size="20" maxlength="20" value="0" onFocus="nofocus()">
+</td>
+</tr>
+<tr>
+<td>
+Mile:   </td>
+<td>
+<input type="text" name="mi" size="20" maxlength="20" value="0" onFocus="nofocus()">
+</td>
+</tr>
+<tr>
+<td align="center">
+<input type="Reset" value="Start Over">
+</td>
+<td align="center">
+<input type="button" value="Convert" onClick="toCM()">
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
