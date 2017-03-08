@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Scientific Calculater</title>
+
+<link  href="css/jquery.mobile.min.css" rel="stylesheet" type="text/css" />  
+
+<style type="text/css">
+body, html {
+	color: #666;
+	background-color: #000;
+	padding:0px;
+	-webkit-user-select: none;
+	min-width:780px;
+	min-height:450px;
+	max-height:450px;
+	width: 780px;
+}
+body{overflow:hidden;
+	display:inline;}
+/* remove the blue glow around focused inputs */
+input {
+  outline: none;
+}
+
+#content {
+   
+}
+
+#footer {
+    position: fixed;
+    height: 22px;
+    width: 100%;
+    bottom: 0;
+    border: none;
+	text-align:center;
+}
+
+.footerInputs{
+	border: 1px solid #464646;
+	color:#666;
+	background-color:transparent;
+	height:20px;
+}
+
+.ui-btn>*{padding-left:0px;padding-right:0px;}
+
+</style>
+
+	
+    
+    <script src="js/functions.js" type="text/javascript"></script>
+	<script src="js/jquery.min.js" type="text/javascript">
+    
+$(document).pageInit(function() {
+$('#question').hide();
+$('#hlp').hide();
+
+   jQuery.fx.off = true;
+  	  
+});
+    </script>  
+    
+	<script src="js/jquery.mobile.min.js" type="text/javascript">
+    $(document).bind("mobileinit", function(){
+	  $.mobile.defaultPageTransition = 'none';
+	});
+    </script>
+    
+	<script src="js/BigDecimal-all-last.min.js" type="text/javascript"></script>
+    <script src="js/beta_calc.js" type="text/javascript"></script>
+</head>
+
+<body >
+<div data-role="page" data-theme="a" id="calculator"  >
+  <div data-role="content" id="content">
+           
+    <center>
+    <div style="width:780px;" id="elka"><br>
+  <form style="width:780px;" name="theform" id="form1">
+
+<div style="width:790px;" >
+
+
+<div style="width:75px; float:left">
+  <input type="button" value="   C   " id="kESCTop" name="kESCTop" />
+</div>
+
+<div id="subElka">
+<input name="display" id="display1" style="background:#c8c7c7; -moz-box-shadow:inset 0 0 10px #000000; box-shadow:inset 0 0 7px #000; color:#000; text-shadow:none;font-size:18px" onKeyPress="return disableEnterKey(event)" value="0" size=50  type=hidden />
+<input name="display123" id="display123" style="background:#c8c7c7; -moz-box-shadow:inset 0 0 10px #000000; box-shadow:inset 0 0 7px #000; color:#000; text-shadow:none;font-size:18px;text-align:right;float:left;width:560px;margin-top:5px;margin-left:-5px;"  value="0" size=50 readonly data-theme="a" />
+</div>
+
+<div style="width:75px; float:left;margin-left:10px">
+<input type="button" value=" <=  " id="kBkSpc" name="kBkSpc" />
+</div>
+
+</div>
+              <div class="ui-grid-a" id="bigBox" style=" clear:both">
+            <div class="ui-block-a" id="littleBox1">
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="&#8730;" id="kBtnSqrt" name="kBtnSqrt" >
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="sin" id="kBtnSin" name="kBtnSin">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="sinh" id="kBtnSinH" name="kBtnSinH">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="asin" id="kBtnAsin" name="kBtnAsin">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="ln" id="kBtnLn" name="kBtnLn">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="&#179; &#8730;"  id="kBtnCube" name="kBtnCube">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="cos" id="kBtnCos" name="kBtnCos">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="cosh" id="kBtnCosH" name="kBtnCosH">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="acos" id="kBtnACos" name="kBtnACos">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="log10" id="kBtnLogTen" name="kBtnLogTen">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="&#8319; &#8730;"  id="kBtnNsq" name="kBtnNsq">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="tan" id="kBtnTan" name="kBtnTan">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="tanh" id="kBtnTanH" name="kBtnTanH">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="atan" id="kBtnAtan" name="kBtnAtan">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="log&#8336;()" id="kBtnLOGn" name="kBtnLOGn">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="x &#178;" id="kBtnSquare" name="kBtnSquare">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="cot" id="kBtnCot" name="kBtnCot">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="coth" id="kBtnCotN" name="kBtnCotN">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="acot" id="kBtnACot" name="kBtnACot">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="   &pi;   " id="kBtnPI" name="kBtnPI">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="x &#179;" id="kBtCmCube" name="kBtCmCube">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="sec" id="kBtCmSec" name="kBtCmSec">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="sech" id="kBtCmSecH" name="kBtCmSecH">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="asec" id="kBtCmASec" name="kBtCmASec">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="   e   " id="kBtnCmdE" name="kBtnCmdE">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="x &#8319; " id="kUglyButton" name="kUglyButton">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" id="btnRad" value="Rad" name="kBtnRad" >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" id="btnDeg" value="Deg" name="kBtnDeg">
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="exp" id="kbEXP" name="kbEXP">
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="&times;rdm" id="kbRNDbtn" name="kbRNDbtn" >
+                    </div>
+              </div>
+                </div>
+            <div class="ui-block-b" id="littleBox2">
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="   MC   " id="kMC" name="kMC">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="   M+   " id="kMPlus" name="kMPlus" >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="   M-   " id="kMMinus" name="kMMinus" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value=" MR " id="kMR" name="kMR" >
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="    /    " id="kDiv" name="kDiv">
+                    </div>
+              </div>
+                  <!-- /grid-d -->
+                  
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value=".xx" id="kDxx" name="kDxx" >
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="    7    " name="k7" id="k7"  >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="    8    " name="k8" id="k8" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="    9    " name="k9" id="k9" >
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="    &times;    " name="kTimes" id="kTimes" >
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="int" id="kInt" name="kInt">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="    4    " name="k4" id="k4" >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="    5    " name="k5" id="k5" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="    6    " name="k6"  id="k6" >
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="    -    " name="kMinus" id="kMinus" >
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="rnd" id="kCmRand" name="kCmRand" >
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="    1     " name="k1" id="k1">
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="    2    " name="k2" id="k2" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="    3    " name="k3" id="k3" >
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="    +    " name="kPlus" id="plus">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value="   C   " name="kEsc" id="kEsc" >
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value="    0     " name="k0" id="k0" >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="    .    " name="kDot" id="kDot" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="    &plusmn;    " name="kChange" id="kChange" >
+                    </div>
+                <div class="ui-block-e">
+                      <input type="button" value="    =    " id="enter" name="kEnter" data-theme="b">
+                    </div>
+              </div>
+                  <div class="ui-grid-d">
+                <div class="ui-block-a">
+                      <input type="button" value=" copy  " name="cbCpy" id="cbCpy">
+                    </div>
+                <div class="ui-block-b">
+                      <input type="button" value=" paste  " name="cbPst" id="cbPst" >
+                    </div>
+                <div class="ui-block-c">
+                      <input type="button" value="    %    " name="cbPrct" id="cbPrct" >
+                    </div>
+                <div class="ui-block-d">
+                      <input type="button" value="    % =    " name="cbPrct2"  id="cbPrct2">
+                    </div>
+              </div>
+                </div>
+          </div>
+            </FORM>
+      </div>
+        </center>    
+  </div>
+    </div>
+<div id="question" data-role="page1" data-theme="a"   >
+      <div data-role="content">
+    <div id="Panel" >
+          <center>
+        <div style="width:90%;">
+              <h1 id="textcode">Enter <sup>n</sup> Value:</h1>
+              <form style="width:450px;" name="theform2" id="form2">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                <td width="90"><input type="button" value="   C   " id="kbClrSecScr" name="kbClrSecScr"></td>
+                <td><div style="width:300px;margin-left:5px;margin-top:0px;" id="subElka2">
+                    <input name="displays" id="display3" 
+    style="background:#c8c7c7; -moz-box-shadow:inset 0 0 10px #000000; box-shadow:inset 0 0 7px #000; color:#000; text-shadow:none;font-size:18px" size=10 data-theme="a" onKeyPress="return disableEnterKey(event)" readonly />
+                  </div></td>
+                <td width="90"><input type="button" value=" <=  " id="kbBackSecScr" name="kbBackSecScr"></td>
+              </tr>
+                </table>
+            <div id="bigBox2">
+                  <div  id="littleBox4"><!-- /grid-d -->
+                <div class="ui-grid-b">
+                      <div class="ui-block-a">
+                    <input type="button" value="    7    " id="kbs7" name="kbs7" >
+                  </div>
+                      <div class="ui-block-b">
+                    <input type="button" value="    8    " id="kbs8" name="kbs8" >
+                  </div>
+                      <div class="ui-block-c">
+                    <input type="button" value="    9    " id="kbs9" name="kbs9" >
+                  </div>
+                      <div class="ui-block-d"></div>
+                    </div>
+                <div class="ui-grid-b">
+                      <div class="ui-block-a">
+                    <input type="button" value="    4    " id="kbs4" name="kbs4" >
+                  </div>
+                      <div class="ui-block-b">
+                    <input type="button" value="    5    " id="kbs5" name="kbs5" >
+                  </div>
+                      <div class="ui-block-c">
+                    <input type="button" value="    6    " id="kbs6" name="kbs6" >
+                  </div>
+                      <div class="ui-block-d"></div>
+                    </div>
+                <div class="ui-grid-b">
+                      <div class="ui-block-a">
+                    <input type="button" value="   1     " id="kbs1" name="kbs1" >
+                  </div>
+                      <div class="ui-block-b">
+                    <input type="button" value="    2    " id="kbs2" name="kbs2" >
+                  </div>
+                      <div class="ui-block-c">
+                    <input type="button" value="    3    " id="kbs3" name="kbs3" >
+                  </div>
+                      <div class="ui-block-d"></div>
+                    </div>
+                <div class="ui-grid-b">
+                      <div class="ui-block-a">
+                    <input type="button" value="   0     " id="kbsZero" name="kbsZero" >
+                  </div>
+                      <div class="ui-block-b"> 
+                    <input id="dotPoint"  type="button" value="    .    " name="dotPoint" >
+                  </div>
+                      <div class="ui-block-c">
+                    <input type="button" value="    &plusmn;    " id="revert2" name="revert2" >
+                  </div>
+                      <div class="ui-block-d"></div>
+                    </div>
+                <div class="ui-grid-c">
+                      <div class="ui-block-a"></div>
+                      <div class="ui-block-b">
+                    <input type="button" value=" cancel  " id="kbsCncl" name="kbsCncl" >
+                  </div>
+                      <div class="ui-block-c">
+                    <input type="button" value="   OK    " id="enter2"  data-theme="b" name="enter2" >
+                  </div>
+                    </div>
+              </div>
+                </div>
+          </FORM>
+            </div>
+      </center>
+        </div>
+  </div>      
+    </div>
+
+<div id="setup" data-role="page1" data-theme="a"   >
+  <div data-role="content">
+    <div id="Panel2" >
+      <center>
+        <div style="width:90%;">
+          <h1 id="textcode2">Preferences:</h1>
+          <form style="width:450px;" name="theform2" id="form3">
+            
+            <div id="bigBox3">
+              <div  id="littleBox3">
+                <div class="ui-grid-b">
+                  <div class="ui-block-a"></div>
+                  <div class="ui-block-b">Background Image:</div>
+                  <div class="ui-block-c"></div>
+                  <div class="ui-block-d"></div>
+                </div>
+                <div class="ui-grid-b">
+                  <div class="ui-block-a">
+                    <input type="button" value=" none " id="kbqNone" name="kbqNone" >
+                  </div>
+                  <div class="ui-block-b">
+                    <input type="button" value=" space 1 " id="kbqDefault" name="kbqDefault" >
+                  </div>
+                  <div class="ui-block-c">
+                    <input type="button" value=" space 2 " id="kbqBgr2" name="kbqBgr2" >
+                  </div>
+                  <div class="ui-block-d"></div>
+                </div>               
+				  
+                <div class="ui-grid-b">
+                  <div class="ui-block-a">
+                    <input type="button" value=" default " id="kbqBgr3" name="kbqBgr3">
+                  </div>
+                  <div class="ui-block-b">
+                    <input id="dotPoint3"  type="button" value=" color " name="dotPoint3" >
+                  </div>
+                  <div class="ui-block-c">
+<input id="dotPoint2"  type="button" value=" color " name="dotPoint2" >
+                  </div>
+                  <div class="ui-block-d"></div>
+                </div>
+                <div><input type="text" id="manualBgr" name="manualBgr"></div>
+                <div class="ui-grid-a">
+                  <div class="ui-block-a"></div>
+                  <div class="ui-block-b"></div>
+                  <div class="ui-block-c"></div>
+                  <div class="ui-block-d"></div>
+                </div>
+                <div class="ui-grid-c">
+                  <div class="ui-block-a"></div>
+                  <div class="ui-block-b">
+                    <input type="button" value=" cancel  " id="kbsCncl2" name="kbsCncl2" >
+                  </div>
+                  <div class="ui-block-c">
+                    <input type="button" value="   OK    " id="enter3"  data-theme="b" name="enter3" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="file" id="openUrl" name="openUrl" style="visibility:hidden" />
+          </FORM>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
+    
+<script src="js/event_handlers.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Converter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popup2.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+</head>
+<body style="width:230px;height:auto;">
+<div id="body">
+</div>	
+	<form action="" method="get" name="uc">
+	<div class="head">
+		Converter
+	</div>
+	<table class="main">
+		<tr>
+			<td width="45%" style="padding: 7px">
+				 Type
+			</td>
+			<td width="55%" align="right">
+				<select name="ut" id="utSelect">
+					<option value="1">Length</option>
+					<option value="2">Weight</option>
+					<option value="3">Temperature</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding: 0px">
+				<div id="table1">
+					<table class="length" style="border-bottom: 0px;">
+						<tr>
+							<td width="45%">
+								No. of units
+							</td>
+							<td width="55%">
+								<input name="lip" value="1" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert from
+							</td>
+							<td>
+								<select name="flength" id="flength">
+									<option value="1">Centimeters</option>
+									<option value="2">Meters</option>
+									<option value="3">Kilometers</option>
+									<option value="4">Inches</option>
+									<option value="5">Feet</option>
+									<option value="6">Yards</option>
+									<option value="7">Miles</option>
+									<option value="8">Nautical Miles</option>
+									<option value="9">Smoots</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert to
+							</td>
+							<td>
+								<select name="tlength" id="tlength">
+									<option value="1">Centimeters</option>
+									<option value="2"selected="selected">Meters</option>
+									<option value="3">Kilometers</option>
+									<option value="4">Inches</option>
+									<option value="5">Feet</option>
+									<option value="6">Yards</option>
+									<option value="7">Miles</option>
+									<option value="8">Nautical Miles</option>
+									<option value="9">Smoots</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="reset">
+									Reset</button>
+							</td>
+							<td>
+								<button type="button" id="unitBtn" />
+								Convert
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input class="op" name="lop" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="table2">
+					<table class="weight">
+						<tr>
+							<td width="45%">
+								No. of units
+							</td>
+							<td width="55%">
+								<input id="wip" value="1" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert from
+							</td>
+							<td>
+								<select name="fweight" id="fweight">
+									<option value="1" selected="selected">Grams</option>
+									<option value="2">Kilograms</option>
+									<option value="3">Quintals</option>
+									<option value="4">Tonnes</option>
+									<option value="5">Tolas (India)</option>
+									<option value="6">Ounces</option>
+									<option value="7">Pounds</option>
+									<option value="8">Short Tons (US)</option>
+									<option value="9">Long Tons (UK)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert to
+							</td>
+							<td>
+								<select name="tweight" id="tweight">
+									<option value="1">Grams</option>
+									<option value="2" selected="selected">Kilograms</option>
+									<option value="3">Quintals</option>
+									<option value="4">Tonnes</option>
+									<option value="5">Tolas (India)</option>
+									<option value="6">Ounces</option>
+									<option value="7">Pounds</option>
+									<option value="8">Short Tons (US)</option>
+									<option value="9">Long Tons (UK)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="reset">
+									Reset</button>
+							</td>
+							<td>
+								<button type="button" id="weightBtn"/>
+								Convert
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input class="op" name="wop" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="table3">
+					<table class="temp">
+						<tr>
+							<td width="45%">
+								No. of units
+							</td>
+							<td width="55%">
+								<input id="tip" value="1" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert from
+							</td>
+							<td>
+								<select name="ftemp" id="ftemp">
+									<option value="1" selected="selected">Deg. Celcius</option>
+									<option value="2">Deg. Fahrenhite</option>
+									<option value="3">Kelvin</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Convert to
+							</td>
+							<td>
+								<select name="ttemp" id="ttemp">
+									<option value="1">Deg. Celcius</option>
+									<option value="2" selected="selected">Deg. Fahrenhite</option>
+									<option value="3">Kelvin</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="reset">
+									Reset</button>
+							</td>
+							<td>
+								<button type="button" id="tempBtn" />
+								Convert
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input class="op" name="top" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

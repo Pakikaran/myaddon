@@ -1,0 +1,32 @@
+#body
+{
+	width:250px;
+	background:#444444;
+	height:280px;
+	margin:left;
+	
+	border:2px solid black;
+	width:100%;
+}
+#Header
+{
+	color:white;
+	background:888888;
+	height:50px;
+	margin:center;
+	border:1px solid black;
+	clear:both;
+	width:100%;
+	
+}
+
+#contant
+{
+	background:#a1a1a1;
+	text-color:#444444;
+	width:100%
+	font-family:verdena;
+	border:1px solid black;
+	text-align:center;
+	height:229px;
+}

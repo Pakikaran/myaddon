@@ -1,0 +1,28 @@
+#header {
+    text-align: right;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color:red;
+}
+    /*#header a img {
+        border: none;
+    }
+    #header #h_popout {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/header/icon_popout.png');
+    }
+    #header #h_popout:hover {
+        background-image: url('../images/header/icon_popoutO.png');
+    }
+    #header #h_star {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/header/icon_star.png');
+    }
+    #header #h_star:hover {
+        display: inline-block;
+        background-image: url('../images/header/icon_starO.png');
+    }

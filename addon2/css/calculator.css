@@ -1,0 +1,139 @@
+html{
+	width: 275px;
+	
+}
+input[type=button]  {
+        background: none repeat scroll 0 0 transparent;
+        border: medium none;
+        border-spacing: 0;
+        color: black;
+        font-family: 'PT Sans Narrow',sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.2rem;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-indent: 0;
+}
+
+#calc {
+    width: 260px;
+    height: 300px;
+    text-align: right;
+    border-radius: 0;
+    margin-left: 0;
+    padding-top: 0.23px;
+    left: 0;
+	
+    background-color: #444444;
+    position: relative;
+    box-shadow: 0 0 3px;
+   }
+input[type=text]{
+    font-size: 35px;
+    height: 50px;
+    margin: 20px;
+  	top: -8px;
+	left: -11px;
+	position: relative;
+    border-radius: 4px;
+    font-family: sans-serif;
+	  border: none;
+	  padding-right: 2px;
+    width: 240px;
+    text-align: right;
+    }
+
+input[type=button] {
+    width: 43px;
+    height: 45px;
+    margin-top: 4px;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: black;
+    box-shadow: 0 1px 2px black;
+       }
+	   
+#numpad {
+  width: 152px;
+  height: 215px;
+  border-radius: 2px;
+  display: inline-block;
+  left: -6px;
+  top: -23px;
+  background-color: aabbaa;
+  position: relative;
+  text-align: center;
+  
+}
+
+#operators {
+  width: 94px;
+  display: inline-block;
+  position: relative;
+  left: -11px;
+  top: -20px;  
+}
+
+#list {
+    left: -85px;
+    top: 20px;
+    width: 460px;
+	margin: 0;
+    position: absolute;
+    text-align:center;
+	color: #a3a3a3;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+
+#equal {
+    background-color: #83db36;
+    color: white;
+	
+}
+#sqrt {
+  font-size: 20px;
+  position: relative;
+  top: -3px;
+  }
+#clear {
+  position: relative;
+  top: -3px;
+  background-color: maroon;
+  color: white;
+}
+
+#plus {
+	background-color: #cc6c4c;
+}
+#multiply {
+	background-color: #cc6c4c;
+}
+#minus {
+	background-color: #cc6c4c;
+}
+#divide{
+	background-color: #cc6c4c;
+}
+#power{
+	background-color: #cc6c4c;
+}
+#sqrt{
+	background-color: #cc6c4c;
+}
+#bl{
+	background-color: black;
+}
+
+
+
+
